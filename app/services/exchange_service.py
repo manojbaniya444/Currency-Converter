@@ -54,7 +54,7 @@ class ExchangeService:
         cache_key = f"exchange_rates:{base_currency}"
         rates_data = await self._get_from_cache(cache_key)
 
-        if not rates_data:
+        if not rates_data or "rates" not in rates_data:
             rates_data = await self._fetch_from_api(base_currency)
             await self._store_in_cache(cache_key, rates_data)
 
