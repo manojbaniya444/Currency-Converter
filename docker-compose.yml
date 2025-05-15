@@ -3,6 +3,7 @@ version: '3.8'
 services:
   api:
     build: .
+    image: currency-converter-api:latest
     ports:
       - "${PORT:-8000}:8000"
     environment:
