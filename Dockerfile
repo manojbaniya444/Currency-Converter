@@ -18,4 +18,4 @@ ENV DEV_MODE=production
 EXPOSE ${PORT}
 
 # Use array syntax for CMD to avoid shell parsing issues
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--log-level", "info"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
