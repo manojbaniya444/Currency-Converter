@@ -2,6 +2,10 @@
 
 Get the exchange rate of any currency and convert the exchange rate.
 
+## Project Structure Image
+
+![Project Structure Image](./images/project_structure_image.png)
+
 ## Setup
 
 1. **Clone the repository**
@@ -53,3 +57,18 @@ Get the exchange rate of any currency and convert the exchange rate.
 ### **Response Example**
 
 ![Response example of above request.](./images/example_response.png)
+
+### **Pre-Commit Checks**
+
+![Pre-Commit Checking](./images/pre_commit.png)
+
+### **Github Workflows Actions**
+
+Lint and Test
+![CI Pipeline Lint Test](./images/ci_pipeline.png)
+
+Github CI Workflows list
+![CI Pipeline Lint Test](./images/ci_pipeline_2.png)
+
+Build and Deploy Image in DockerHub
+![Deploy in DockerHub](./images/deploy_pipeline.png)
