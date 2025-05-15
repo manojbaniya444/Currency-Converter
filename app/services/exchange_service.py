@@ -5,6 +5,7 @@ import logging
 from datetime import datetime
 from typing import Dict, List, Optional
 
+import httpx
 import redis
 import requests
 
@@ -125,7 +126,12 @@ class ExchangeService:
                 headers["Authorization"] = f"Bearer {self.api_key}"
 
             logger.info(f"Fetching exchange rates for {base_currency} from api")
-            response = requests.get(url, headers=headers, timeout=10)
+
+            async with httpx.AsyncClient() as client:
+                response = await client.get(url=url, headers=headers, timeout=10)
+
+            # response = requests.get(url, headers=headers, timeout=10)
+            logger.info("Using Async HTTPx for requests")
 
             if response.status_code == 404:
                 raise CurrencyNotFoundError(base_currency)
